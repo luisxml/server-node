@@ -3,6 +3,9 @@ const app = express();
 
 const hbs = require('hbs');
 
+//Puerto heroku
+const port = process.env.PORT || 3000;
+
 
 app.use(express.static( __dirname + '/public'));
 
@@ -44,6 +47,6 @@ app.get('/about', function (req, res) {
 //     res.send('Hello wolrd!!!');
 // });
 
-app.listen(8080, ()=> {
-    console.log('Escuhando peticiones en el puerto 8080');
+app.listen( port, ()=> {
+    console.log(`Escuhando peticiones en el puerto ${port}`);
 });
